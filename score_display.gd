@@ -3,7 +3,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	update_score(1) # Replace with function body.
+	update_score(0) # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
