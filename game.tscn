@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr451tbccq3bn"]
+
+[ext_resource type="Texture2D" uid="uid://oymc3g0rlu2k" path="res://pong paddle.png" id="1_nawh7"]
+[ext_resource type="Script" path="res://area_2d.gd" id="1_vldrj"]
+[ext_resource type="PackedScene" uid="uid://cj4uw2obx7vh7" path="res://ball.tscn" id="3_ilbqe"]
+[ext_resource type="Script" path="res://area_2d2.gd" id="4_71l11"]
+[ext_resource type="PackedScene" uid="uid://dqk7c1uean4kl" path="res://score display.tscn" id="5_7mlqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1fme"]
+size = Vector2(6, 32)
+
+[node name="game" type="Node2D"]
+position = Vector2(39, 141)
+scale = Vector2(4, 4)
+
+[node name="ball" parent="." instance=ExtResource("3_ilbqe")]
+position = Vector2(135.75, 47)
+
+[node name="paddle" type="Node2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="paddle"]
+script = ExtResource("1_vldrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="paddle/Area2D"]
+position = Vector2(2.25, 2.5)
+texture = ExtResource("1_nawh7")
+
+[node name="paddle up" type="CollisionShape2D" parent="paddle/Area2D"]
+position = Vector2(2.25, -5.5)
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_w1fme")
+one_way_collision_margin = 0.0
+
+[node name="paddle down" type="CollisionShape2D" parent="paddle/Area2D"]
+position = Vector2(2.25, 10.5)
+scale = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_w1fme")
+one_way_collision_margin = 0.0
+
+[node name="paddle2" type="Node2D" parent="."]
+position = Vector2(3, 0)
+scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="paddle2"]
+script = ExtResource("4_71l11")
+
+[node name="Sprite2D" type="Sprite2D" parent="paddle2/Area2D"]
+position = Vector2(128.25, 2.5)
+texture = ExtResource("1_nawh7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paddle2/Area2D"]
+position = Vector2(128.25, 2.5)
+shape = SubResource("RectangleShape2D_w1fme")
+one_way_collision_margin = 0.0
+
+[node name="HUD" parent="." instance=ExtResource("5_7mlqh")]
+unique_name_in_owner = true

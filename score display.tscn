@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqk7c1uean4kl"]
+
+[ext_resource type="Script" path="res://score_display.gd" id="1_46rmh"]
+[ext_resource type="FontFile" uid="uid://d1ldmqt8f75yr" path="res://Montserrat-ExtraBold.ttf" id="1_pedfo"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_46rmh")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -40.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_pedfo")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -39.0
+offset_right = 232.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_pedfo")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
